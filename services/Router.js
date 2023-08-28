@@ -4,7 +4,7 @@ const Router = {
       a.addEventListener("click", (event) => {
         event.preventDefault();
 
-        const url = a.href;
+        const url = event.target.getAttribute("href");
         Router.go(url);
       });
     });
@@ -16,6 +16,28 @@ const Router = {
 
     if (addToHistory) {
       history.pushState({ route }, "", route);
+    }
+
+    let pageElement = null;
+
+    switch (route) {
+      case "/":
+        pageElement = document.createElement("h1");
+        pageElement.textContent = "Menu";
+        break;
+
+      case "/order":
+        pageElement = document.createElement("h1");
+        pageElement.textContent = "Your Order";
+        break;
+    }
+
+    if (pageElement) {
+      let main = document.querySelector("main");
+      main.innerHTML = "";
+      main.appendChild(pageElement);
+      window.scrollX = 0;
+      window.scrollY = 0;
     }
   },
 };
