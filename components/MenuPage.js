@@ -5,7 +5,7 @@ export class MenuPage extends HTMLElement {
     // Open shadow DOM
     this.root = this.attachShadow({ mode: "open" });
 
-    //Create <style> tag in dom
+    // Create <style> tag in dom
     const styles = document.createElement("style");
     this.root.appendChild(styles);
 
