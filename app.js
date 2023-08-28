@@ -10,4 +10,5 @@ window.addEventListener("DOMContentLoaded", () => {
   console.log("Doc Ready!");
 
   loadData();
+  app.router.init();
 });
