@@ -1,3 +1,5 @@
+import { addToCart } from "../services/Order.js";
+
 export default class ProductItem extends HTMLElement {
   constructor() {
     super();
@@ -17,7 +19,7 @@ export default class ProductItem extends HTMLElement {
     this.querySelector("a").addEventListener("click", (event) => {
       console.log(event.target.tagName);
       if (event.target.tagName.toLowerCase() == "button") {
-        //TODO
+        addToCart(product.id);
       } else {
         app.router.go(`/product-${product.id}`);
       }
