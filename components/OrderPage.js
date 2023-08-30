@@ -57,3 +57,5 @@ export class OrderPage extends HTMLElement {
     }
   }
 }
+
+customElements.define("order-page", OrderPage);

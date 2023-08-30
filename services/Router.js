@@ -33,7 +33,7 @@ const Router = {
         break;
 
       case "/order":
-        pageElement = document.createElement("orders-page");
+        pageElement = document.createElement("order-page");
         break;
 
       default:
